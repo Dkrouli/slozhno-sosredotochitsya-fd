@@ -4,8 +4,6 @@
   переключая тему
 */
 
-
-
 :root.theme-light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
@@ -52,12 +50,10 @@
   .theme-light .lamp_element::after {
     display: none;
   }
-
-
 }
 
 @media (prefers-color-scheme: light) {
-  :root .theme-auto {  
+  :root .theme-auto {
     --bg-image: url(../images/cover-image-light.png);
     --accent-color: #ff8dcb;
     --bg-color: #fff1f7;
@@ -68,14 +64,13 @@
     --text-paragraph-color: #353430;
     --card-text: #353430;
     --menu-button-hover: rgba(50, 49, 45, 40%);
-}
+  }
 
-.theme-auto .lamp_element {
-  display: none;
-}
+  .theme-auto .lamp_element {
+    display: none;
+  }
 
-.theme-auto .lamp_element::after {
-  display: none;
-}
-
+  .theme-auto .lamp_element::after {
+    display: none;
+  }
 }
