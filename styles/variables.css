@@ -1,0 +1,18 @@
+/*
+  Переменные для вашего проекта
+  и их переопределение под различные устройства
+*/
+:root {
+  --bg-image: url(../images/cover-image-dark.png);
+  --accent-color: #ff0070;
+  --bg-color: #000028;
+  --bg-text-color: #ff0070;
+  --font-size: 18px;
+  --title: #db00ff;
+  --text-title-color: #000028;
+  --text-paragraph-color: #ff0070;
+  --card-text: #f1b2ce;
+  --menu-button-hover: rgba(255, 0, 112, 40%);
+  
+}
+
