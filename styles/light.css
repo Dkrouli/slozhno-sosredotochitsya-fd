@@ -48,10 +48,8 @@
   .theme-light .lamp_element::after {
     display: none;
   }
-}
 
-@media (prefers-color-scheme: light) {
-  :root .theme-auto {
+  .theme-auto {
     --bg-image: url(../images/cover-image-light.png);
     --accent-color: #ff8dcb;
     --bg-color: #fff1f7;

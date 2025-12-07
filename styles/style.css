@@ -3,10 +3,10 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   display: grid;
-  gap: 48.5px;
   background-image: var(--bg-image);
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
   background-color: var(--bg-color);
 }
 
@@ -47,14 +47,12 @@
   justify-self: end;
   align-self: center;
   color: var(--text-paragraph-color);
-  inline-size: 70px;
-  block-size: 90px;
 }
 
 .header__theme-menu-list {
   display: grid;
   justify-items: center;
-  gap: 13.5px;
+  gap: 12px;
 }
 
 .header__theme-menu-button {
@@ -64,11 +62,11 @@
   font-weight: 400;
   line-height: 18px;
   border: none;
+  padding: 3px 13px;
 }
 
 .header__theme-menu-button:hover {
   outline: 1px solid var(--menu-button-hover);
-  padding: 3px 13px;
   text-underline-offset: 2px;
 }
 
@@ -80,7 +78,6 @@
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--text-paragraph-color);
-  padding: 3px 13px;
   pointer-events: none;
 }
 
@@ -137,6 +134,7 @@
   display: grid;
   gap: 30px;
   padding-inline: 10px;
+  margin-block: 40px;
 }
 
 .section {
@@ -170,12 +168,12 @@
   letter-spacing: 0;
 }
 
-.card__answer-title {
+.card__advice-title {
   display: grid;
   font-weight: 400;
 }
 
-.answer {
+.advices {
   margin-block-start: 20px;
 }
 
@@ -185,19 +183,19 @@
 }
 
 .link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--card-text);
 }
 
 .link:focus-visible {
-  box-shadow: 1px;
   outline: 1px solid var(--card-text);
+  text-decoration: none;
 }
 
 .gallery_cards {
   display: grid;
 }
 
-img {
+.image {
   display: block;
   inline-size: 100%;
   object-fit: contain;
@@ -233,8 +231,8 @@ img {
   }
 
   .header_text {
-    inline-size: 364px;
-    justify-self: end;
+    max-inline-size: 364px;
+    inline-size: 100%;
     padding-right: 15px;
   }
 
@@ -250,30 +248,30 @@ img {
     margin: 20px;
   }
 
+  .main {
+    margin-block: 60px;
+  }
+
   .section {
-    display: grid;
     grid-template-columns: 1fr 2fr;
     margin-inline: 10px;
     margin-block-end: 30px;
-    gap: 21px;
+    gap: 20px;
   }
 
   .section_title {
-    font-size: var(--font-size);
-    font-weight: 700;
-    color: var(--text-paragraph-color);
-    inline-size: 236px;
+    max-inline-size: 236px;
   }
 
   .card__menu-list {
     margin-block-start: 0;
   }
 
-  .section:nth-child(2) {
+  .section-causes {
     grid-template-columns: 1fr;
   }
 
-  .answer {
+  .advices {
     grid-row-start: 1;
     grid-column-start: 2;
     margin-block-start: 0;
@@ -286,21 +284,20 @@ img {
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 3;
-    margin-block-start: 43px;
+    margin-block-start: 44px;
   }
 
   .gallery {
     margin-inline: 10px;
   }
 
-  img {
+  .image {
     block-size: 100%;
     object-fit: cover;
     padding-block-start: 0;
   }
 
   .gallery_cards {
-    display: grid;
     grid-template-areas:
       "sunset sunset ice-cream"
       "tape books ice-cream"
@@ -309,76 +306,70 @@ img {
     margin-top: 20px;
   }
 
-  .sunset {
+  .image:nth-child(1) {
     grid-area: sunset;
   }
 
-  .ice-cream {
+  .image:nth-child(2) {
     grid-area: ice-cream;
   }
 
-  .tape {
+  .image:nth-child(3) {
     grid-area: tape;
   }
 
-  .books {
+  .image:nth-child(4) {
     grid-area: books;
   }
 
-  .street {
+  .image:nth-child(5) {
     grid-area: street;
   }
 
   .footer {
     min-block-size: 1024px;
-    margin-block-start: 60px;
   }
+
   .footer_title {
     font-size: var(--font-size-title-max);
   }
 }
 
-@media (width > 1024px) {
+@media (width >= 1024px) {
   .header {
     min-block-size: 768px;
-    padding: 20px 20px 20px 0;
   }
 
   .header__theme-menu {
     justify-self: center;
     align-self: flex-start;
-    margin-block-start: 0;
-    inline-size: 230px;
+    margin-inline-start: 20px;
   }
 
   .header__theme-menu-list {
     display: flex;
-    gap: 13px;
+    gap: 11px;
   }
 
   .header_text {
-    inline-size: 491px;
-    justify-self: end;
+    max-inline-size: 491px;
     padding-right: 0;
   }
 
   .section {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    margin-block-end: 30px;
     gap: 8px;
   }
 
   .section_title {
-    inline-size: 100%;
+    max-inline-size: 315px;
   }
 
-  .section:nth-child(2) {
+  .section-causes {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: min-content 1fr;
   }
 
-  .question {
+  .causes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-row-start: 2;
@@ -389,22 +380,7 @@ img {
     margin-block-start: 10px;
   }
 
-  .answer {
-    margin-block-start: 0;
-  }
-
-  .article {
-    display: grid;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    margin-block-start: 44px;
-  }
-
   .footer {
     min-block-size: 768px;
-    margin-block-start: 60px;
-    margin-inline: 10px;
   }
 }
