@@ -41,31 +41,12 @@
     --menu-button-hover: rgba(50, 49, 45, 40%);
   }
 
-  .theme-light .lamp_element {
+  .lamp_element {
     display: none;
   }
 
-  .theme-light .lamp_element::after {
+  .lamp_element::after {
     display: none;
   }
 
-  .theme-auto {
-    --bg-image: url(../images/cover-image-light.png);
-    --accent-color: #ff8dcb;
-    --bg-color: #fff1f7;
-    --bg-text-color: #ff8dcb;
-    --title: #ffc2e6;
-    --text-title-color: #353430;
-    --text-paragraph-color: #353430;
-    --card-text: #353430;
-    --menu-button-hover: rgba(50, 49, 45, 40%);
-  }
-
-  .theme-auto .lamp_element {
-    display: none;
-  }
-
-  .theme-auto .lamp_element::after {
-    display: none;
-  }
 }
